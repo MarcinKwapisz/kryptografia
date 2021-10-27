@@ -17,6 +17,10 @@ def euklides(n, x):
 
 
 def zadanie1(n, b):
+    '''
+    Zaimplementuj algorytm (funkcję) obliczania odwrotności w grupie Φ(n). Wyko-
+    rzystaj Rozszerzony Algorytm Euklidesa.
+    '''
     g, x, y = euklides(n, b)
     if y == 1:
         return g % n
@@ -24,6 +28,10 @@ def zadanie1(n, b):
         return False
 
 def zadanie2(x, k, p):
+    '''
+    Zaimplementuj algorytm (funkcję) efektywnego potęgowania w zbiorze Z ∗ n . Wyko-
+    rzystaj algorytm iterowanego podnoszenia do kwadratu.
+    '''
     a = 1
     b = x
 
@@ -36,6 +44,10 @@ def zadanie2(x, k, p):
     return a
 
 def zadanie3(n):
+    '''
+    Zaimplementuj test (funkcję), który sprawdza liczba naturalna n jest liczbą pierw-
+    szą. Wykorzystaj test Fermata
+    '''
     temp = []
     for x in range(0, 10):
         b = random.randint(2, n - 1)
@@ -47,10 +59,18 @@ def zadanie3(n):
     return True
 
 def zadanie4(b, p):
+    '''
+    Niech p będzie liczbą pierwszą. Zaimplementuj test (funkcję), który sprawdza czy
+    element zbioru Z ∗ p jest resztą kwadratową w Z ∗ p . Wykorzystaj twierdzenie Eulera.
+    '''
     ls = zadanie2(b, ((p - 1) // 2), p)
     return True if ls == 1 else False
 
 def zadanie5(b, p):
+    '''
+    Niech p ≡ 3 (mod 4) będzie liczbą pierwszą. Zaimplementuj funkcję, która oblicza
+    pierwiastek kwadratowy w Φ(p). Wykorzystaj twierdzenie Eulera.
+    '''
        return zadanie2(b, ((p + 1) // 4), p)
 
 if __name__ == "__main__":
